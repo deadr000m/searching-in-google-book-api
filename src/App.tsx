@@ -1,24 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import Header from './components/Header';
+import FormApp from './components/FormApp';
+import BooksList from './components/BooksList';
+import { useAppDispatch } from './hooks/hooks';
+import { fetchBooks } from './redux/slices/booksSlice';
+import Books from './components/Books';
 
 function App() {
+  // const [quantaty, setQuantaty] = useState<number>(18);
+  // const dispatch = useAppDispatch();
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header></Header>
+      <Books></Books>
+
+      {/* <FormApp></FormApp>
+      <BooksList></BooksList>
+      <div
+        className="app-button-getmore"
+        onClick={() => {
+          setQuantaty(quantaty + 18);
+          dispatch(
+            fetchBooks({
+              searchString: 'react',
+              startIndex: quantaty,
+            })
+          );
+        }}
+      >{}
+        Загрузить еще...
+      </div> */}
     </div>
   );
 }
