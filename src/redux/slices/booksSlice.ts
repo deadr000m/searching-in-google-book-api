@@ -29,7 +29,7 @@ export const fetchBooks = createAsyncThunk(
   async (param: IFetch, thunkAPI) => {
     try {
       let resp = await axios.get(
-        'https://www.googleapisbla.com/books/v1/volumes?q=' +
+        'https://www.googleapis.com/books/v1/volumes?q=' +
           param.searchString +
           '&startIndex=' +
           param.startIndex +
