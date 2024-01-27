@@ -56,11 +56,8 @@ const booksSlice = createSlice({
   initialState: initialState,
   name: 'books',
   reducers: {
-    setSerchedString: (state, action) => {
-      state.searchedTitle = action.payload;
-    },
-    setSortingType: (state, action) => {
-      state.sortingType = action.payload;
+    setSearchingAndSorting: (state, action) => {
+      return { ...state, ...action.payload };
     },
   },
   extraReducers: (builder) => {
@@ -94,4 +91,4 @@ const booksSlice = createSlice({
 });
 
 export default booksSlice.reducer;
-export const { setSerchedString, setSortingType } = booksSlice.actions;
+export const { setSearchingAndSorting } = booksSlice.actions;

@@ -8,7 +8,7 @@ function LoadButton() {
   const searchedBook = useAppSelector((state) => state.books.searchedTitle);
   const [quantaty, setQuantaty] = useState<number>(18);
   const isLoading = useAppSelector((state) => state.books.isLoading);
-  const sortBy = useAppSelector((state) => state.mutation.sort);
+  const sortBy = useAppSelector((state) => state.books.sortingType);
   const dispatch = useAppDispatch();
   return (
     <div

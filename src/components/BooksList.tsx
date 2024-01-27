@@ -3,7 +3,6 @@ import { Flex } from 'antd';
 import { useAppSelector } from '../hooks/hooks';
 import { useAppDispatch } from '../hooks/hooks';
 import { choseBook } from '../redux/slices/modalSlice';
-import Item from 'antd/es/list/Item';
 
 function BooksList() {
   const filter = useAppSelector((state) => state.mutation.filter);

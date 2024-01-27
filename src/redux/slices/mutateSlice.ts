@@ -2,12 +2,10 @@ import { createSlice } from '@reduxjs/toolkit';
 
 interface IMutate {
   filter: string;
-  sort: string;
 }
 
 const initialState: IMutate = {
   filter: '',
-  sort: 'relevance',
 };
 
 const mutateSlice = createSlice({
@@ -17,12 +15,9 @@ const mutateSlice = createSlice({
     setFilter: (state, action) => {
       state.filter = action.payload;
     },
-    setSorting: (state, action) => {
-      state.sort = action.payload;
-    },
   },
 });
 
-export const { setFilter, setSorting } = mutateSlice.actions;
+export const { setFilter } = mutateSlice.actions;
 
 export default mutateSlice.reducer;

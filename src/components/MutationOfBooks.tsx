@@ -1,19 +1,14 @@
 import React from 'react';
-import { useState } from 'react';
 import { useAppDispatch } from '../hooks/hooks';
 import { useAppSelector } from '../hooks/hooks';
-import { setSorting } from '../redux/slices/mutateSlice';
 import { setFilter } from '../redux/slices/mutateSlice';
-import { fetchBooks } from '../redux/slices/booksSlice';
 
 function MutationOfBooks() {
   const dispatch = useAppDispatch();
-  const isBooksEmpty = !Boolean(
-    useAppSelector((state) => state.books.books).length
-  );
+  // const isBooksEmpty = !Boolean(
+  //   useAppSelector((state) => state.books.books).length
+  // );
   const mutation = useAppSelector((state) => state.mutation);
-
-  const [selectedFilter, setSelectedFilter] = useState('all');
 
   const filterOptions = [
     'all',
@@ -24,7 +19,7 @@ function MutationOfBooks() {
     'medical',
     'poetry',
   ];
-  const sortOptions = ['relevance', 'newest'];
+
   return (
     <div className="app-mutate-book">
       <div>
